@@ -8,13 +8,12 @@ ENV PATH="$HOME/flutter/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_
 # Install Open JDK for android and other dependencies
 USER root
 RUN apt-get update \
-    && apt-get install -y openjdk-18-jdk \  # Install the latest JDK (currently 19)
+    && apt-get install -y openjdk-18-jdk \
                           libgtk-3-dev \
                           libnss3-dev \
                           fonts-noto \
                           fonts-noto-cjk \
-    && update-alternatives --set java /usr/lib/jvm/java-18-openjdk-amd64/bin/java  # Set the default Java version
-
+    && update-alternatives --set java /usr/lib/jvm/java-18-openjdk-amd64/bin/java
 
 # Make some changes for our vnc client and flutter chrome
 # RUN sed -i 's|resize=scale|resize=remote|g' /opt/novnc/index.html \
