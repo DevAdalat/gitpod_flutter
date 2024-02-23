@@ -1,4 +1,4 @@
-FROM docker pull gitpod/workspace-full-vnc:latest
+FROM gitpod/workspace-full-vnc:latest
 SHELL ["/bin/bash", "-c"]
 ENV ANDROID_HOME=$HOME/androidsdk \
     FLUTTER_VERSION=3.19.1-stable \
